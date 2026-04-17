@@ -69,13 +69,20 @@ music.volume = 0.4
 let musicPlaying = false
 
 function toggleMusic(){
+
+  const btn = document.querySelector(".music-toggle")
+
   if(musicPlaying){
     music.pause()
     musicPlaying = false
+    btn.classList.remove("activate")
   }else{
     music.play()
     musicPlaying = true
+    btn.classList.add("activate")
   }
+
+  btn.textContent = musicPlaying ? "🔊" : "🔇"
 
   playClick()
 }
