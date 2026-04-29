@@ -161,3 +161,17 @@ function toggleDark(){
   document.body.classList.toggle("dark")
   playClick()
 }
+
+function enterSite(){
+  const lock = document.getElementById("lockscreen")
+  lock.style.display = "none"
+}
+
+function updateLockTime(){
+  const now = new Date()
+  document.getElementById("lockTime").innerText =
+    now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
+}
+
+setInterval(updateLockTime, 1000)
+updateLockTime()
